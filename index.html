@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Persona Finder & Professional Linktree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js" defer></script>
+</head>
+<body>
+
+  <div class="page-title">
+    <h1>Digital Persona &amp; Linktree</h1>
+    <p>Temukan persona digitalmu &amp; bagikan profilmu ke dunia</p>
+  </div>
+
+  <div class="wrap">
+
+    <!-- FINDER CARD -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Digital Persona Finder</div>
+      </div>
+
+      <div class="field">
+        <label for="nama">Nama kamu</label>
+        <input type="text" id="nama" placeholder="Contoh: Afifah…" />
+      </div>
+
+      <div class="field">
+        <label for="hobi">Hobi utama</label>
+        <select id="hobi">
+          <option value="">— Pilih hobi —</option>
+          <option value="tech">Teknologi / Coding</option>
+          <option value="seni">Seni &amp; Desain</option>
+          <option value="musik">Musik</option>
+          <option value="olahraga">Olahraga</option>
+          <option value="menulis">Menulis / Literatur</option>
+          <option value="bisnis">Bisnis &amp; Investasi</option>
+          <option value="fotografi">Fotografi &amp; Film</option>
+          <option value="memasak">Memasak</option>
+          <option value="gaming">Gaming</option>
+          <option value="travel">Travel &amp; Petualangan</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Angka keberuntungan (1–10)</label>
+        <div class="range-wrap">
+          <input type="range" id="angka" min="1" max="10" value="5" step="1"
+            oninput="document.getElementById('av').textContent=this.value" />
+          <span class="range-val" id="av">5</span>
+        </div>
+      </div>
+
+      <button class="btn-find" id="btnFind" onclick="cariPersona()">Temukan Persona saya ✦</button>
+
+      <div class="result-box" id="rbox">
+        <div class="p-badge" id="pbadge"></div>
+        <div class="p-title" id="ptitle"></div>
+        <div class="p-desc"  id="pdesc"></div>
+      </div>
+    </div>
+
+    <!-- LINKTREE CARD -->
+    <div class="card">
+      <div class="linktree-header">
+        <div class="linktree-title">Profile Links</div>
+      </div>
+
+      <div class="avatar-wrap">
+        <span class="avatar-fallback">AN</span>
+        <img
+          src="fifah.jpeg"
+          alt="Foto profil AFifah Chairunnisya"
+          onerror="this.style.display='none'"
+        />
+      </div>
+
+      <div class="profile-name">AFifah Chairunnisya</div>
+      <div class="profile-role">Full-Shopping Developer &amp; Creator</div>
+      <hr class="profile-divider" />
+
+      <a class="link-btn" href="https://github.com/cacacutie" target="_blank" rel="noopener">
+        <span class="ico ico-gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57C20.56 21.79 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </span>
+        <span class="link-label">GitHub</span>
+      </a>
+
+      <a class="link-btn" href="https://example.com" target="_blank" rel="noopener">
+        <span class="ico ico-pt">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h7v7H3zm0 11h7v7H3zm11-11h7v7h-7zm0 11h7v7h-7z"/></svg>
+        </span>
+        <span class="link-label">Portfolio</span>
+      </a>
+
+      <a class="link-btn" href="https://linkedin.com/in/afifah-chairunnisya" target="_blank" rel="noopener">
+        <span class="ico ico-li">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.5h5V24H0V8.5zm7.5 0H12v2.15h.06C12.66 9.49 14.2 8 16.5 8 21 8 22 11.15 22 15v9h-5v-8c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.06 2.07-3.06 4.2V24H7.5V8.5z"/></svg>
+        </span>
+        <span class="link-label">LinkedIn</span>
+      </a>
+
+      <a class="link-btn" href="https://example.com/cv" target="_blank" rel="noopener">
+        <span class="ico ico-cv">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+        </span>
+        <span class="link-label">Curriculum Vitae</span>
+      </a>
+
+      <a class="link-btn" href="mailto:afifah@example.com">
+        <span class="ico ico-em">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </span>
+        <span class="link-label">Email</span>
+      </a>
+
+      <a class="link-btn" href="https://twitter.com/afifahchairunnisya" target="_blank" rel="noopener">
+        <span class="ico ico-tw">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43.36a9 9 0 0 1-2.88 1.1A4.52 4.52 0 0 0 11.56 8a12.82 12.82 0 0 1-9.3-4.71 4.52 4.52 0 0 0 1.4 6.03A4.48 4.48 0 0 1 1.6 8.8v.06a4.52 4.52 0 0 0 3.62 4.43 4.56 4.56 0 0 1-2.04.08 4.52 4.52 0 0 0 4.22 3.14A9.06 9.06 0 0 1 1 19.54 12.79 12.79 0 0 0 7.94 21c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.17 9.17 0 0 0 23 3z"/></svg>
+        </span>
+        <span class="link-label">Twitter / X</span>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
